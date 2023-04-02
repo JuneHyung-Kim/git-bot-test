@@ -1,16 +1,14 @@
 name: Example Workflow
 on:
   push:
-    branches:
-      - main
+
 jobs:
-  build:
+  get-patch-content:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: Run tests
+    - name: Get patch content
       run: |
-        echo "Running tests..."
-        # Insert test command here
-
+        git diff HEAD^ HEAD > patch.diff
+        cat patch.diff
