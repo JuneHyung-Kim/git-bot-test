@@ -1,0 +1,10 @@
+name: 'Automated code review system'
+description: 'Custom Github Action @June-hyung Kim'
+inputs:
+    github_api_key:
+        description: 'Github API Key'
+        required: false
+        default: '999'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
